@@ -1,0 +1,450 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	outline:none;
+}
+
+/*CUSTOM FONT*/
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Regular.ttf);
+
+}
+
+@font-face {
+	font-family: "Montserrat";
+	font-weight: bold;
+	src: url(../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+	font-family: "LucidaCal";
+	src: url(../fonts/LucidaCal.ttf);
+}
+
+@font-face {
+	font-family: "fontAwesome";
+	src: url(../fonts/fontawesome-webfont.ttf);
+}
+
+body {
+	font-family: "Montserrat";
+	background-color: #fbf8ed;
+	width: 960px;
+	margin:0 auto;
+}
+
+
+header {
+	width: 960px;
+	margin:0 auto;
+}
+
+
+/* ============================ LOGO ============================= */
+
+#logo {
+	/*margin-top: 40px;*/
+	margin-left: 20px;
+	/*border: 1px solid red;*/
+	float:left;
+}
+
+
+#tech {
+	font-size: 46px;
+	color: #f1a94e;
+}
+
+#eCal {
+	font-family: "LucidaCal";
+	font-size: 99px;
+	color:#e45641;
+	margin-left: -13px;
+
+}
+
+#shop {
+	font-size: 34px;
+	color:#5d4c46;
+	margin-left: -6px;
+
+	
+}
+
+
+#tech, #eCal, #shop {
+	display:inline-block;
+	margin-top: -20px;
+}
+
+
+/* ========================== LOGIN / CART ============================== */
+
+button {
+	border:none;
+}
+
+#account, #cart {
+	/*display:inline-block;*/
+	height:88px;
+	width: 116px;
+	float:right;
+	margin-right: 10px;
+	margin-top: 20px;
+}
+
+#account>p, #cart>p {
+	color: #fbf8ed;
+	font-size: 11px;
+	text-align: center;
+
+}
+
+#account {
+	background-color: #f1a94e;
+	transition: all 0.3s ease 0s;
+}
+
+#cart {
+	background-color: #e45641;
+	transition: all 0.3s ease 0s;
+}
+
+#account>span, #cart>span {
+	color: #fbf8ed;
+	font-size: 50px;
+}
+
+/*#acc {
+	padding-left: 38px;
+	padding-top: 13px;
+}
+
+#sh {
+	padding-left: 32px;
+	padding-top: 13px;
+}*/
+
+/*#account>p:hover, #cart>p:hover,#account>span:hover, #cart>span:hover, #account:hover, #cart:hover {
+	color:#fff;
+}*/
+
+#account:hover, #cart:hover {
+	background-color: #5d4c46;
+}
+
+
+/* ================================ MENU ================================ */
+
+
+#menu_bg {
+	display: block;
+	height: 45px;
+	background-color: #e45641;
+}
+
+nav {
+	float:left;
+}
+
+#menu_bg ul li {
+	list-style: none;
+	display: inline-block;
+	color: #fbf8ed;
+	font-size: 18px;
+	/*line-height: 45px;*/
+	margin-right: 20px;
+	margin-top: 13px;
+	padding-bottom: 6px;
+	/*transition: all 0.2s ease 0s;*/
+}
+
+#menu_bg ul li:first-child {
+	margin-left: 20px;
+}
+
+#menu_bg ul li:hover {
+	color:#fff;
+	cursor:pointer;
+	border-bottom:5px solid #fff;
+}
+
+
+/* ======================== SEARCH ======================= */
+
+#search {
+	display:inline-block;
+	float:right;
+	margin-right: 10px;
+	border:none;
+	width: 242px;
+	height: 30px;
+	margin-top: 8px;
+	background-color: #fbf8ed;
+	
+}
+
+
+input[placeholder] {
+	font-size: 11px;
+	color: #5d4c46 !important;
+	font-family: "Montserrat";
+	padding-left: 15px;
+	font-weight: bold;
+}
+
+::-webkit-input-placeholder {
+    color: #5d4c46
+}
+:-moz-placeholder {
+    color: #5d4c46
+}
+::-moz-placeholder {
+    color: #5d4c46
+}
+:-ms-input-placeholder {
+    color: #5d4c46
+}
+
+input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+input:focus::-moz-placeholder {
+	color: transparent;
+}
+
+input:focus::-ms-input-placeholder {
+	color: transparent;
+}
+
+
+::-webkit-input-placeholder::before { font-family: "fontAwesome"; font-size: 14px; content:'\f002  '; color: #e45641 }
+::-moz-placeholder::before  { font-family: "fontAwesome"; font-size: 14px; content:'\f002  '; color: #e45641 } /* firefox 19+ */
+:-ms-input-placeholder::before  { font-family: "fontAwesome"; font-size: 14px; content:'\f002  '; color: #e45641 } /* ie */
+input:-moz-placeholder::before  { font-family: "fontAwesome"; font-size: 14px; content:'\f002  '; color: #e45641 }
+
+
+input:focus::-webkit-input-placeholder::before {
+	color: transparent;
+}
+
+input:focus::-moz-placeholder::before {
+	color:transparent;
+}
+
+input:focus::-ms-input-placeholder::before {
+	color:transparent;
+}
+
+
+/* =================================== SLIDER ============================================== */
+
+
+.banner { position: relative; overflow: auto; margin-left: 10px; }
+.banner li { list-style: none; }
+.banner ul li { float: left; }
+
+
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  text-align: center;
+}
+
+.dots li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  text-indent: -999em;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: .4;
+  -webkit-transition: background .5s, opacity .5s;
+  -moz-transition: background .5s, opacity .5s;
+  transition: background .5s, opacity .5s;
+}
+
+.dots li.active {
+  background: #fff;
+  opacity: 1;
+}
+
+
+
+/*  =========================== NEW ARRIVALS ======================== */
+
+
+#arr {
+	margin-top: 40px;
+	font-size: 20px;
+	color:#5d4c46;
+	font-weight: bold;
+}
+#br {
+	display: block;
+	width: 960px;
+	border:1px solid #5d4c46;
+}
+
+.prod_box {
+	float:left;
+	margin-top: 40px;
+	margin-right: 20px;
+	width: 220px;
+	height: 270px;
+	background-color: #fff;
+	border: solid 1px rgba(93,76,70,.29);
+	transition: all 0.3s ease 0s;
+}
+
+.prod_box:hover {
+	-webkit-box-shadow: 0 4px 11px 2px rgba(93,76,70,.47);
+	-moz-box-shadow: 0 4px 11px 2px rgba(93,76,70,.47);
+	box-shadow: 0 4px 11px 2px rgba(93,76,70,.47);
+	border: solid 1px rgba(93,76,70,.29);
+}
+
+.frame {
+	width: 200px;
+	height: 180px;
+	background-color: rgba(251,248,237,0);
+	border: solid 1px rgba(93,76,70,.24);
+	margin:10px auto;
+}
+
+.frame img {
+	display: block;
+	margin: 5px auto;
+}
+
+.title {
+	font-size: 14px;
+	color:#5d4c46;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.price {
+	float:left;
+	width: 108px;
+	height: 45px;
+	background-color: #5d4c46;
+	color:#fbf8ed;
+	line-height: 45px;
+	text-align: center;
+}
+
+.buy {
+	float:left;
+	width: 55px;
+	height: 45px;
+	background-color: #e45641;
+	color:#fbf8ed;
+	font-size: 28px;
+	transition: all 0.3s ease 0s;
+}
+
+.info {
+	float:left;
+	width: 55px;
+	height: 45px;
+	background-color: #f1a94e;
+	color:#fbf8ed;
+	font-size: 28px;
+	transition: all 0.3s ease 0s;
+}
+
+.buy:hover, .info:hover{
+	background-color: #5d4c46;
+}
+
+
+/* ============================= FOOTER ========================= */
+
+footer {
+	position: absolute;
+	bottom:0;
+	width: 960px;
+	height: 45px;
+	background-color: #5d4c46;
+	padding-left: 20px;
+}
+
+footer p {
+	display: inline-block;
+	color:#fbf8ed;
+	font-size: 12px;
+	line-height: 45px;
+}
+
+#contact {
+	margin-left: 535px;
+}
+
+span.foot {
+	float:right;
+	color: #fbf8ed;
+	font-size: 28px;
+	margin-right: 20px;
+	line-height: 45px;
+}
+
+
+/* ================================= INFO PAGE =========================== */
+
+#img_frame {
+	float:left;
+	width: 270px;
+	height: 240px;
+	background-color: #fff;
+	border: solid 1px rgba(93,76,70,.29);
+	margin-right: 25px;
+}
+
+#img_frame img {
+	display: block;
+	margin:13px auto;
+}
+
+#tit {
+	font-size: 22px;
+	font-weight: bold;
+	color:#5d4c46;
+}
+
+#br2 {
+	display: block;
+	width: 665px;
+	border:1px solid #5d4c46;
+	float:right;
+}
+
+#dt {
+	margin-top: 15px;
+}
+#dt p {
+	font-size: 15px;
+	color: #5d4c46;
+}
+
+#buttons {
+	display: block;
+	margin-top: 75px;
+}
+
+
+#details_box {
+	margin-top: 20px;
+	width: 960px;
+	height: 400px;
+	background-color: #fff;
+	border: solid 1px rgba(93,76,70,.29);
+}
