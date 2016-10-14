@@ -1,3 +1,9 @@
+<?php
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +26,36 @@
 
 		<!-- login/cart -->
 
-		<button type="button" id="cart"><span class="fa fa-shopping-cart" id="sh"></span><p>CART: 150$</p></button>
-		<button type="button" id="account"><span class="fa fa-user" id="acc"></span><p>LOGIN</p></button>
-		
+		<!-- <button type="button" id="cart"><span class="fa fa-shopping-cart" id="sh"></span><p>CART: 150$</p></button>
+		<button type="button" id="account"><span class="fa fa-user" id="acc"></span><p>LOGIN</p></button> -->
+		<?php if($loggedin) { echo ("<button type='button' id='cart'><span class='fa fa-shopping-cart' id='sh'></span><p>CART: 0€</p></button>"); } ?>
+
+		<button type="button" data-toggle="popover" data-html='true' title="Είσοδος" data-placement="left"
+		data-content='
+
+			<label for="uName">Όνομα χρήστη</label>
+			<input class="form-control" id="uName" type="text">
+			<label for="pass" style="margin-top:5px;" >Κωδ. Πρόσβασης</label>
+			<input class="form-control" id="pass" type="password">
+			<button type="button" style="margin-top:10px;" class="btn btn-default" onclick="$(&#39;#loginError&#39;).load(&#39;login.php&#39;, {username:$(&#39;#uName&#39;).val(), password:$(&#39;#pass&#39;).val()})">Login</button>
+			<script>$("#pass").keypress(function (e) {
+			if (e.which == 13) {
+				$("#loginError").load("login.php", {username:$("#uName").val(), password:$("#pass").val()});
+				return false;    //<---- Add this line
+			}
+		});</script>
+		<br>
+		<small id="loginError" style="margin-top:5px;"></small>
+		<small style="margin-top:5px;"><i>Δεν έχετε λογαριασμό&#59; <a href="#" data-toggle="modal" data-target="#register" onclick="$(&#39;#account&#39;).popover(&#39;hide&#39;);">Εγγραφείτε τώρα</a></i></small>'
+		id="account"><span class="fa fa-user" id="acc"></span><p><?php if($loggedin) {echo $actualName;} else {echo "LOGIN";}?></p></button>
+
+		<?php if($loggedin) { echo ("<script> $('#account').remove(); </script>
+			<button type='button' data-toggle='popover' data-trigger='focus' data-html='true' title='Προφίλ' data-placement='bottom'
+			data-content='<b><center>Όνομα: $actualName<br>Επώνυμο: $surname<br>Διεύθυνση: $address<br>Τρόπος πληρωμής: $payment<br>
+			<a href=&#39;logout.php&#39;><button type=&#39;button&#39; style=&#39;margin-top:10px;&#39; class=&#39;btn btn-default&#39;> Έξοδος </button></a></center></b>'
+			id='account'><span class='fa fa-user' id='acc'></span><p>$actualName</p></button>
+			"); } ?>
+
 
 		<div style="clear: both";></div>
 
@@ -30,7 +63,7 @@
 
 			<!-- search -->
 			<input type="text" id="search" placeholder="SEARCH..."></input>
-			
+
 
 			<!-- navigation/menu  -->
 
@@ -48,8 +81,9 @@
 		<br>
 	</header>
 
+
 	<!-- apple products -->
-	<p id="arr">APPLE</p>
+	<!-- <p id="arr">APPLE</p>
 	<div id="br"></div>
 
 	<div class="prod_box">
@@ -62,7 +96,7 @@
 		<div class="price">800$</div>
 		<button type="button" class="buy"><span class="fa fa-shopping-cart"></span></button>
 		<a href="#"><button type="button" class="info"><span class="fa fa-info-circle"></span></button></a>
-	</div> <!-- end product box -->
+	</div>
 
 
 	<div class="prod_box">
@@ -75,7 +109,7 @@
 		<div class="price">777$</div>
 		<button type="button" class="buy"><span class="fa fa-shopping-cart"></span></button>
 		<a href="#"><button type="button" class="info"><span class="fa fa-info-circle"></span></button></a>
-	</div> <!-- end product box -->
+	</div>
 
 	<div class="prod_box">
 		<div class="frame">
@@ -87,7 +121,7 @@
 		<div class="price">999$</div>
 		<button type="button" class="buy"><span class="fa fa-shopping-cart"></span></button>
 		<a href="#"><button type="button" class="info"><span class="fa fa-info-circle"></span></button></a>
-	</div> <!-- end product box -->
+	</div>
 
 	<div class="prod_box">
 		<div class="frame">
@@ -99,7 +133,7 @@
 		<div class="price">456$</div>
 		<button type="button" class="buy"><span class="fa fa-shopping-cart"></span></button>
 		<a href="#"><button type="button" class="info"><span class="fa fa-info-circle"></span></button></a>
-	</div> <!-- end product box -->
+	</div>
 
 	<div class="prod_box">
 		<div class="frame">
@@ -111,7 +145,7 @@
 		<div class="price">456$</div>
 		<button type="button" class="buy"><span class="fa fa-shopping-cart"></span></button>
 		<a href="#"><button type="button" class="info"><span class="fa fa-info-circle"></span></button></a>
-	</div> <!-- end product box -->
+	</div>  -->
 
 
 	<div style="clear: both";></div>
@@ -121,6 +155,6 @@
 		<p id="contact">CONTACT US:</p>
 		<span class="fa fa-facebook-square foot"></span><span class="fa fa-twitter-square foot"></span><span class="fa fa-envelope foot"></span>
 	</footer>
-	
+
 </body>
 </html>
